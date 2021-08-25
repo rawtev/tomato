@@ -11,8 +11,8 @@ body {
 .logo{
   display:flex;
   justify-content:flex-end;
-  width: 21rem;
-  padding-right: 1rem;
+  /* width: 21rem; */
+  margin-left: 14px;
 }
 
 .headerBody{
@@ -21,9 +21,17 @@ body {
   border-radius: 5px;
   margin: 0px;
   padding: 0px;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
+
+.head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
 
 #tomato{
   font-family: 'Open Sans', sans-serif;
@@ -39,21 +47,19 @@ color: rgb(245, 112, 130);
 .search{
   display: flex;
   flex-direction: row;
-  justify-content: center;
   justify-content: space-between;
-  align-items: center;
+  align-items:flex-end;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 8px -5px  black;
   width: 44rem;
   height: 3.3rem;
   background-color: white;
+  margin-left: 25px;
 }
 
 .location{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   border: none;
   outline: none;
   font-family: 'Montserrat', sans-serif;
@@ -63,8 +69,6 @@ color: rgb(245, 112, 130);
 .searchbar{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -77,19 +81,16 @@ color: rgb(245, 112, 130);
 }
 
 .user{
-  width: 27rem;
-  display: flex;  
-  justify-content: center;
   font-family: 'Montserrat', sans-serif;
+  margin-left: 10rem;
+  display: block;
 }
 
 .headRow{
   display: flex;
   flex-direction:row;
-  justify-content: space-around;
   align-items: center;
   height: 3.2rem;
-  margin-top: 10px;
     margin-bottom: 55px;
 }
 
@@ -117,8 +118,8 @@ ul{
   width: 70%;
   display: flex;
   /* border: 1px solid blue; */
-  margin-left: -90px;
-  /* justify-content: space-around; */
+  margin-left: 20px;
+  justify-content:flex-start;
   /* position: absolute; */
   margin-bottom: 0rem;
 }
@@ -126,14 +127,14 @@ ul{
 .filter{
   list-style-type: none;
   /* border: 1px solid blue; */
-  width: 70%;
-  margin-left: -90px;
+  margin-left: 20px;
+  padding-top: 25px;
   display: flex;
   flex-direction: row;
+  justify-content:flex-start;
 }
 
 .filter li{
-  
   display: flex;
   border: 1px solid rgb(200, 200, 200);
   margin-right: 2rem;
@@ -159,7 +160,6 @@ font-size: 14px;
 }
 
 .delTakeout{
-  width: 100%;
   border-bottom: 0.5px solid rgb(211, 211, 211);
   display: flex;
   justify-content: center;
@@ -185,19 +185,17 @@ font-size: 14px;
 }
 
 .img1{
-  width: 260px;
-  height: 190px;
+  width: 16.25rem;
+  height: 11.875rem;
   border-radius: 0.6rem;
 }
 
 .carasoulHeader{
 margin-top: 10px;
-font-size: 25px;
+font-size: 1.563rem;
 }
 
-.carasoulContainer{
-  margin-right: 20px;
-}
+
 
 .food{
 font-size: 20px;
@@ -212,7 +210,6 @@ font-size: 20px;
 .restaurantBody{
   display: flex;
   justify-content: center;
-  margin-left: 25px;
 }
 
 .restHeader{
@@ -221,12 +218,13 @@ font-size: 20px;
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 30px;
+  margin-left: 25px;
 }
 
 
 .restImg{
-  width: 328px;
-  height: 248px;
+  width: 20.5rem;
+  height: 15.5rem;
   border-radius: 1rem;
 }
 
@@ -239,23 +237,25 @@ font-size: 20px;
   border-radius: 1rem;
   /* padding-top: 9px;
   padding-bottom: 12px; */
-  padding: 9px 0 12px 0;
+  padding: 9px 0px 0px 0px;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 35px;
   display: flex;
   flex-direction: column;
-
+  width: 20.5rem;
+    height: 23.125rem;
+    align-items: center;
 }
 
 .pic{
   position: relative;
-  width: 328px;
-  height: 248px;
+  width: 20.5rem;
+  height: 15.5rem;
 }
 
 .titleRating{
   padding: 3px 0 3px 0;
-  width: 328px;
+  width: 20.5rem;
 
 }
 
@@ -331,4 +331,29 @@ width: 328px;
   font-size: 12px;
   flex-direction: column;
     align-items: center;
+}
+
+/* To add responsiveness */
+@media(max-width:998px){
+    body{
+        font-size: 55%;
+    }
+    .search{
+      display: none;
+    }
+    .user{
+      display: none;
+    }
+}
+
+@media(max-width:768px){
+    body{
+        font-size: 45%;
+    }
+    .search{
+      display: none;
+    }
+    .user{
+      display: none;
+    }
 }

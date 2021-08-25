@@ -4,8 +4,8 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 function Header() {
     return (
-        <div className="head ">
-            <div className="headRow ">
+        <div className="head row">
+            <div className="headRow col-md-9 col-lg-9 col-sm-12">
                 <div className="logo ">
                     <p id="tomato">tomato</p>
                 </div>
@@ -24,16 +24,16 @@ function Header() {
                     <h2>User</h2>
                 </div>
             </div>
-            <div className="delTakeout">
-                <ul className="lists">
+            <div className="delTakeout row">
+                <ul className="lists   col-md-9 col-lg-9 col-sm-12">
                     <li className="active"><h4>Delivery</h4></li>
                     <li className=""><h4>Dining Out</h4></li>
                     <li className=""><h4>Nightlife</h4></li>
                     <li className=""><h4>Nutrition</h4></li>
                 </ul>
             </div>
-            <div className="filterBody">
-                <ul className="filter">
+            <div className="filterBody row">
+                <ul className="filter col-md-9 col-lg-9 col-sm-12">
                     <li>Filters</li>
                     <li>Rating</li>
                     <li>Safe and Hygienic</li>

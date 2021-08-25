@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className="mainFooter col-md-8">
+        <div className="mainFooter  col-md-9 col-lg-9 col-sm-12">
             <div className=" row">
                 <p id="tomato">tomato</p>
             </div>
