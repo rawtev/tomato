@@ -1,14 +1,17 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
     return (
         <div className="head row">
             <div className="headRow col-md-9 col-lg-9 col-sm-12">
-                <div className="logo ">
-                    <p id="tomato">tomato</p>
-                </div>
+                <NavLink to="/">
+                    <div className="logo ">
+                        <p id="tomato">tomato</p>
+                    </div>
+                </NavLink>
                 <div className="search">
                     <div className="location">
                         <LocationOnIcon className="locationIcon" />
@@ -25,7 +28,7 @@ function Header() {
                 </div>
             </div>
             <div className="delTakeout row">
-                <ul className="lists   col-md-9 col-lg-9 col-sm-12">
+                <ul className="lists  col-md-9 col-lg-9 col-sm-12">
                     <li className="active"><h4>Delivery</h4></li>
                     <li className=""><h4>Dining Out</h4></li>
                     <li className=""><h4>Nightlife</h4></li>

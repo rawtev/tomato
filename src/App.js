@@ -1,13 +1,16 @@
-import { React} from 'react';
+import { React } from 'react';
 import Carasoul from './Components/Carasoul';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Restaurant from './Components/Restaurant';
+import { Switch, Route } from 'react-router-dom';
+import RestaurantClick from './Components/RestaurantClick';
 
 
 function App() {
   return (
-    <div className="mainBody col-sm-12">
+    <div className="mainBody">
+      
       <div className="headerBody">
         <Header />
       </div>
