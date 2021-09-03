@@ -1,10 +1,12 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
+import Sticky from 'react-sticky-el';
 
 function Header() {
     return (
+        <>
         <div className="head row">
             <div className="headRow col-md-9 col-lg-9 col-sm-12">
                 <NavLink to="/">
@@ -27,6 +29,7 @@ function Header() {
                     <h2>User</h2>
                 </div>
             </div>
+
             <div className="delTakeout row">
                 <ul className="lists  col-md-9 col-lg-9 col-sm-12">
                     <li className="active"><h4>Delivery</h4></li>
@@ -46,6 +49,7 @@ function Header() {
                 </ul>
             </div>
         </div>
+        </>
     )
 }
 

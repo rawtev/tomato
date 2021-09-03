@@ -16,7 +16,7 @@ function Restaurant() {
             <div className="row d-flex justify-content-evenly">
                 {restData.map((elem, index) => {
                     return (
-                        <NavLink className="NavLink" to={`/rest`} >
+                        <NavLink className="NavLink" to={`/rest/order`} >
                             <RestCards
                                 title={elem.restaurant_name}
                                 key={index}

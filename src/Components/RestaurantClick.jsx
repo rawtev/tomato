@@ -1,7 +1,18 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Switch } from 'react-router-dom';
+import Overview from './Overview';
+import Order from './Order';
+import Reviews from './Reviews';
+import Menu from './Menu';
+import Photos from './Photos';
+import Footer from './Footer';
+import Sticky from 'react-sticky-el';
+import StarOutlineIcon from '@material-ui/icons/StarOutline';
+import DirectionsIcon from '@material-ui/icons/Directions';
+import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
+import ShareIcon from '@material-ui/icons/Share';
 
 function RestaurantClick(props) {
     return (
@@ -30,7 +41,7 @@ function RestaurantClick(props) {
             <h1>{props.title}</h1>
             <hr></hr>
             <div className="row justify-content-center">
-                <div className="col-md-9 col-lg-9 col-sm-12">
+                <div className="col-md-9 col-lg-9 col-sm-12 stickyContainer">
                     {/*Images group*/}
                     <div className="images row d-flex align-items-center justify-content-lg-start">
                         <div className="image1cont col-lg-8 col-md-8 col-sm-12">
@@ -55,69 +66,82 @@ function RestaurantClick(props) {
                     </div>
 
                     {/* Title and rating */}
-                    <div className="row RestClckdetails">
-                        <div className="row d-flex">
-                            <div className="col-md-8 RestClcktitle">Hari Raj</div>
-                            <div className="col-md-4">
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="row">
-                                            <div className="col-md-4 mt-2">
-                                                <div className="delRating">4.2 *</div>
-                                            </div>
-                                            <div className="col-md-8">
-                                                <div className="delCount">5,236</div>
-                                                <div className="delRev">Delivery Reviews</div>
+                        <div className="row RestClckdetails">
+                            <div className="row d-flex">
+                                <div className="col-md-8 RestClcktitle">Hari Raj</div>
+                                <div className="col-md-4">
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <div className="row">
+                                                <div className="col-md-4 mt-2">
+                                                    <div className="delRating">4.2 *</div>
+                                                </div>
+                                                <div className="col-md-8">
+                                                    <div className="delCount">5,236</div>
+                                                    <div className="delRev">Delivery Reviews</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="row">
-                                            <div className="col-md-4 mt-2">
-                                                <div className="delRating">4.0 *</div>
-                                            </div>
-                                            <div className="col-md-8">
-                                                <div className="delCount">4,532</div>
-                                                <div className="delRev">Delivery Reviews</div>
+                                        <div className="col-md-6">
+                                            <div className="row">
+                                                <div className="col-md-4 mt-2">
+                                                    <div className="delRating">4.0 *</div>
+                                                </div>
+                                                <div className="col-md-8">
+                                                    <div className="delCount">4,532</div>
+                                                    <div className="delRev">Delivery Reviews</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Variety Address and hours */}
-                        <div className="row">
-                            <div className="RestClckVar">Indian, Fast Food, Beverages </div>
-                            <div className="RestClckAdd">Civic Centre, Bhilai</div>
-                            <div className="RestClckTime">10 am - 10 pm </div>
-                        </div>
+                            {/* Variety Address and hours */}
+                            <div className="row">
+                                <div className="RestClckVar">Indian, Fast Food, Beverages </div>
+                                <div className="RestClckAdd">Civic Centre, Bhilai</div>
+                                <div className="RestClckTime">10 am - 10 pm </div>
+                            </div>
 
-                        {/* Buttons */}
-                        <div className="mt-3 row">
-                            <ul className="RestClckbtn">
-                                <li className="RestBtn">* Add Review</li>
-                                <li className="RestBtn">Direction</li>
-                                <li className="RestBtn">Bookmark</li>
-                                <li className="RestBtn">Share</li>
-                            </ul>
-                        </div>
+                            {/* Buttons */}
+                            <div className="mt-3 row">
+                                <ul className="RestClckbtn">
+                                    <li className="RestBtn align-items-center addReview"><StarOutlineIcon className="starIcon"/> Add Review</li>
+                                    <li className="RestBtn"><DirectionsIcon/>Direction</li>
+                                    <li className="RestBtn"><BookmarkBorderOutlinedIcon/>Bookmark</li>
+                                    <li className="RestBtn"><ShareIcon/>Share</li>
+                                </ul>
+                            </div>
 
-                        {/* Menu */}
-                        <div className="row">
-                            <ul className="RestClckMenu">
-                                <li>Overview</li>
-                                <li className="active">Order Online</li>
-                                <li>Reviews</li>
-                                <li>Menu</li>
-                                <li>Photos</li>
-                            <hr></hr>
-                            </ul>
+                            {/* Menu */}
+                            <div className="row">
+                                <ul className="RestClckMenu">
+                                    <NavLink className="toggleLinks" to="/rest/overview">Overview</NavLink>
+                                    <NavLink className="toggleLinks" to="/rest/order">Order Online</NavLink>
+                                    <NavLink className="toggleLinks" to="/rest/review">Reviews</NavLink>
+                                    <NavLink className="toggleLinks" to="/rest/menu">Menu</NavLink>
+                                    <NavLink className="toggleLinks" to="/rest/photos">Photos</NavLink>
+                                    <hr></hr>
+                                </ul>
+                            </div>
+                            {/* Menu components */}
+
+                            <div>
+                                <Switch>
+                                    <Route exact path="/rest/overview" component={Overview}></Route>
+                                    <Route exact path="/rest/order" component={Order}></Route>
+                                    <Route exact path="/rest/review" component={Reviews}></Route>
+                                    <Route exact path="/rest/menu" component={Menu}></Route>
+                                    <Route exact path="/rest/photos" component={Photos}></Route>
+                                </Switch>
+                            </div>
                         </div>
-                    </div>
+                </div>
+                <div className="footerBody">
+                    <Footer />
                 </div>
             </div>
-
         </div>
     )
 }
